@@ -371,7 +371,6 @@ body{
     /*个人技能开始*/
     .main_third{
         width: 100%;
-        height: 500px;
         background: #34AD70;
     }
     .main_third h1{
@@ -392,7 +391,6 @@ body{
     /*兴趣爱好开始*/
     .main_four{
         width: 100%;
-        height: 500px;
         background: #A6AD10;
     }
     .main_four h1{
@@ -403,7 +401,7 @@ body{
     }
     .main_four div{
         width: 300px;
-        margin: 80px auto auto;
+        margin: 20px auto auto;
     }
     .main_four div p{
         padding: 10px;
