@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=no">
+    <title>轮播</title>
+    <style type="text/css">
+        /*jQuery轮播CSS*/
+        #demo1{
+            width: 360px;
+            margin: 0 auto;
+        }
+        .bigcontainer1{
+            width:360px;
+            height:400px;
+            position:relative;
+            overflow:hidden;
+        }
+        .imgcontainer1>img{
+            float:left;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .imgcontainer1>img:nth-child(1){
+            display: block;
+        }
+        .imgcontainer1>img:nth-child(2){
+            display: none;
+        }
+        .imgcontainer1>img:nth-child(3){
+            display: none;
+        }
+        .imgcontainer1>img:nth-child(4){
+            display: none;
+        }
+        .imgcontainer1>img:nth-child(5){
+            display: none;
+        }
+        .button1{
+            position:absolute;
+            left: 40%;
+            -webkit-transform: translateX(-40%);
+            -moz-transform: translateX(-40%);
+            -ms-transform: translateX(-40%);
+            -o-transform: translateX(-40%);
+            transform: translateX(-40%);
+            bottom:0px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .button1 span{
+            float:left; margin:0 5px;
+            cursor:pointer;
+            width:30px;
+            height:30px;
+            border:1px solid #FFF;
+            border-radius:50%;
+            background: #fff;
+            color: #FF0000;
+        }
+
+        .ButtonSpan{
+            color: #fff !important;
+            background: #000 !important;
+        }
+        .movebutton1{
+            position:absolute;
+            width:40px;
+            height:40px;
+            background-color:#000;
+            opacity:0.3;
+            font:30px Simsun;color:#fff;top:180px;
+            text-decoration:none;
+            line-height:40px;
+            text-align:center;
+            display:none;
+        }
+        .bigcontainer1:hover>.movebutton1{
+            display:block;
+        }
+        .movebutton1:hover{
+            opacity:0.7
+        }
+        .imgMenu{
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            color: #fff;
+        }
+        .moveMark1,.moveMark2{
+            position:absolute;
+            width:40px;
+            height:40px;
+            background-color:#000;
+            color: #fff;
+            opacity:0.3;
+            font:30px Simsun;color:#fff;top:180px;
+            text-decoration:none;
+            line-height:40px;
+            text-align:center;
+            display:none;
+        }
+        .moveMark1{
+            left:15px;
+        }
+        .moveMark2{
+            right:15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo1">
+        <!--jQuery示例-->
+        <div class="demo_right">
+            <div class="bigcontainer1">
+                <div class="imgcontainer1">
+                    <img width="360" height="400" src="../images/scenery1.jpg" alt="好山"/>
+                    <img width="360" height="400" src="../images/scenery2.jpg" alt="阳光"/>
+                    <img width="360" height="400" src="../images/scenery3.jpg" alt="白鹅" />
+                    <img width="360" height="400" src="../images/scenery4.jpg" alt="海市蜃楼" />
+                    <img width="360" height="400" src="../images/scenery5.jpg" alt="小猫"/>
+                </div>
+                <div class="imgMenu"></div>
+                <div class="button1" >
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
+                <a href="javascript:;" class="moveMark1">&lt;</a>
+                <a href="javascript:;" class="moveMark2">&gt;</a>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    /*jQuery轮播效果*/
+    var count = null, n=i=0;
+    $(function(){
+        count =  $(".imgcontainer1 img").length;
+        $(".imgcontainer1 img:not(:first-child)").hide();
+        $(".button1 span").click(function(){
+            i = $(this).text()-1;
+            n = i;
+            if(i >= count){
+                return;
+            }
+            $(".imgMenu").html($(".imgcontainer1 img").eq(i).attr("alt"));
+            $(".imgcontainer1 img").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+            $(this).toggleClass("ButtonSpan");
+            $(this).siblings().removeAttr("class","ButtonSpan");
+        })
+    })
+    $(".bigcontainer1").hover(function(){clearInterval(Timer);
+                $(".moveMark1").css({"display":"block"});
+                $(".moveMark2").css({"display":"block"})},
+            function(){Timer = setInterval(showImg,3000);
+                $(".moveMark1").css({"display":"none"});
+                $(".moveMark2").css({"display":"none"})
+            });
+    $(function(){
+        $(".button1 span").eq(0).trigger('click');
+    })
+    function showImg() {
+        n = n >=(count -1) ?0 : ++n;
+        $(".button1 span").eq(n).trigger('click');
+    }
+    function upturning(){
+        n = n <=0 ?4  : --n;
+        $(".button1 span").eq(n).trigger('click');
+    }
+    var Timer = setInterval('showImg()',3000)
+    $(".moveMark1").click(function(){upturning()})
+    $(".moveMark2").click(function(){showImg()})
+</script>
+</body>
+</html>

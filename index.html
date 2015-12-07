@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=no">
-    <title></title>
+    <title>张绍强个人主页</title>
     <script type="text/javascript">
         document.createElement("header");
         document.createElement("footer");
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
-<!--头部开始-->
     <header id="header">
         <div class="header_content">
             <ul class="header_navLeft">
@@ -28,9 +27,7 @@
             <a href="javascript:;" class="header_navRight_a"></a>
         </div>
     </header>
-<!--内容区开始-->
     <div id="main">
-        <!--个人头像开始-->
         <div class="main_first">
             <div>
                 <span class="head_portrait" title="本人"></span>
@@ -41,7 +38,6 @@
                 <a href="file/张绍强.docx" class="download_resume">下载简历</a>
             </div>
         </div>
-        <!--个人简介开始-->
         <div class="main_second">
             <h1>个人简介</h1>
             <div class="synopsis">
@@ -61,7 +57,6 @@
                 <div style="clear: both"></div>
             </div>
         </div>
-        <!--个人技能开始-->
         <div class="main_third">
             <h1>个人技能</h1>
             <div>
@@ -75,7 +70,6 @@
                 <p>8、能熟练Chrome断点调试工具。</p>
             </div>
         </div>
-        <!--兴趣爱好开始-->
         <div class="main_four">
             <h1>兴趣爱好</h1>
             <div>
@@ -84,14 +78,13 @@
                 <p>喜听歌、一个人静静思考。</p>
             </div>
         </div>
-        <!--技能展示开始-->
         <div class="main_fifth">
             <h1>技能展示</h1>
             <div>
                 <ul>
-                    <li><a href="">轮播</a></li>
-                    <li><a href="">二级菜单</a></li>
-                    <li><a href="">复选框开关</a></li>
+                    <li><a href="file/navigationBar.html">下拉菜单</a></li>
+                    <li><a href="file/secondaryMenu.html">二级菜单</a></li>
+                    <li><a href="file/navigationBar.html">轮播</a></li>
                     <li><a href="">侧滑</a></li>
                     <li><a href="">俄罗斯方块</a></li>
                     <li><a href="">俄罗斯方块</a></li>
@@ -108,11 +101,10 @@
             </div>
         </div>
     </div>
-<!--尾部开始-->
     <footer id="footer"></footer>
 </body>
 <script type="text/javascript">
-    /*名字*/
+    /*username*/
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     ctx.font = "40px Verdana";
@@ -122,7 +114,7 @@
     gradient.addColorStop('1.0','yellow');
     ctx.fillStyle = gradient;
     ctx.fillText("张绍强",0,50)
-    /*职业*/
+    /*job*/
     var canvas = document.getElementById("myCanvas1");
     var ctx = canvas.getContext("2d");
     ctx.font = "40px Verdana";

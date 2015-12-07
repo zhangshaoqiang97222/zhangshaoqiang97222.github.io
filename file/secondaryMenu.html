@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=no">
+    <title>二级菜单</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            font: 62.5% Arial, Helvetica, sans-serif;
+        }
+        #demo2{
+            width: 960px;
+            margin: 20px auto;
+        }
+        @media screen and (max-width: 768px){
+            #demo2{
+                width: 300px;
+                margin: 20px auto;
+            }
+        }
+        .demo_left{
+            float: left;
+        }
+        .demo_right{
+            float: right;
+        }
+        /*二级菜单CSS*/
+        .secondaryMenu{
+            position: relative;
+            width: 80px;
+            text-align: center;
+        }
+        .secondaryMenu_a{
+            display: block;
+            line-height: 24px;
+        }
+        .trilateral,.trilateral1{
+            display: block;
+            position: absolute;
+            height: 0;
+            width: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+        }
+        .trilateral1{
+            display: none;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid #000;
+            left: 67px;
+            top: 4px;
+        }
+        .Submenu{
+            box-shadow: 0px 3px 2px 2px #ddd;
+        }
+        .SubmenuBox{
+            display: none;
+            border: 1px solid transparent;
+            width: 80px;
+            margin-left: -1px;
+        }
+        .Submenu li,.Submenu1 li{
+            line-height: 24px;
+            text-align: center;
+        }
+        .Submenu li a:hover{
+            text-decoration: underline;
+        }
+        .secondaryMenu:hover{
+            box-shadow: 0px -3px 2px 2px #ddd;
+            *border: 1px solid #ccc;
+            *border-bottom: transparent;
+        }
+
+        .secondaryMenu:hover .trilateral{
+            *display:none;
+        }
+        .secondaryMenu:hover .trilateral1{
+            *display:block;
+        }
+        .trilateral{
+            border-top: 4px solid #000;
+            border-bottom: 4px solid transparent;
+            left: 67px;
+            top: 8px;
+            transition: all 0.2s linear;
+            transform-origin: center 2px;
+        }
+        .secondaryMenu:hover .trilateral{
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        .secondaryMenu:hover .SubmenuBox{
+            display: block;
+            *border: 1px solid #ccc;
+            *border-top:transparent;
+        }
+
+        /*jQuery二级菜单*/
+        .secondaryMenu1{
+            width: 80px;
+            text-align: center;
+            position: relative;
+        }
+        .secondaryMenu1:hover .trilateral3{
+            *display:block;
+        }
+        .secondaryMenu1:hover .trilateral4{
+            *display:none;
+        }
+        .secondaryMenu1:hover{
+            *border: 1px solid #ccc;
+            *border-bottom: transparent;
+        }
+        .secondaryMenu1_a{
+            display: block;
+            line-height: 24px;
+        }
+        .Submenu1{
+            *margin-left: -1px;
+            width: 100%;
+            display: none;
+            box-shadow: 0px 3px 2px 2px #ddd;
+            height: auto;
+            *border:1px solid #ccc;
+            *border-top:transparent;
+            *left: -1px;;
+        }
+
+        .trilateral3,.trilateral4{
+            display: block;
+            position: absolute;
+            height: 0;
+            width: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+        }
+        .trilateral3{
+            left: 67px;
+            top: 6px;
+            display: none;
+            border-top:4px solid transparent;
+            border-bottom:4px solid #000;
+        }
+        .trilateral4{
+            left: 67px;
+            top: 10px;
+            border-top:4px solid #000;
+            border-bottom:4px solid transparent;
+            transition: all 0.2s linear;
+            transform-origin: center 2px;
+        }
+    </style>
+</head>
+<body>
+<!--二级菜单示例-->
+<div id="demo2">
+    <!--hover伪类示例-->
+    <div class="demo_left">
+        <div class="secondaryMenu">
+            <a class="secondaryMenu_a">客户服务</a>
+            <span class="trilateral"></span>
+            <span class="trilateral1"></span>
+            <div class="SubmenuBox">
+                <ul class="Submenu">
+                    <li><a href="javascript:;">帮助中心</a></li>
+                    <li><a href="javascript:;">售后服务</a></li>
+                    <li><a href="javascript:;">在线客服</a></li>
+                    <li><a href="javascript:;">投诉中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--jQuery示例-->
+    <div class="demo_right">
+        <div class="secondaryMenu1">
+            <a class="secondaryMenu1_a">客户服务</a><!--
+         --><span class="trilateral3"></span><!--
+         --><span class="trilateral4"></span><!--
+         --><ul class="Submenu1"><!--
+                 --><li><a href="javascript:;">帮助中心</a></li><!--
+                 --><li><a href="javascript:;">售后服务</a></li><!--
+                 --><li><a href="javascript:;">在线客服</a></li><!--
+                 --><li><a href="javascript:;">投诉中心</a></li><!--
+         --></ul>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<script type="text/javascript"  src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    /*jQuery二级菜单效果*/
+    $(".secondaryMenu1").hover(function(){
+        if($(this).find($(".Submenu1")).is(":hidden")){
+            if(!$(this).find($(".Submenu1")).is(":animated")){
+                $(this).find($(".secondaryMenu1_a")).css({"boxShadow":"0px -3px 2px 2px #ddd","*border":"1px solid #ccc","*borderBottom":"transparent"})
+                $(this).find($(".trilateral4")).css({"transform":"rotate(180deg)","*display":"none"})
+                $(this).find($(".trilateral3")).css({"*display":"block"})
+                $(this).find($(".Submenu1")).animate({"height":"show"})
+            }
+        }else{
+            return;
+        }
+
+    },function(){
+        if($(this).find($(".Submenu1")).is(":visible")){
+            $(this).find($(".trilateral4")).css({"transform":"rotate(0deg)"});
+            $(this).find($(".Submenu1")).animate({"height":"hide"},function(){
+                $(".secondaryMenu1_a").css({"boxShadow":"none"},500)
+                $(".secondaryMenu1_a").css({"*border":"none"})
+            })
+        }else{
+            return;
+        }
+    })
+</script>
+</body>
+</html>

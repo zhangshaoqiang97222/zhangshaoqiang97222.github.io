@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=no">
+    <title></title>
+    <style type="text/css">
+        .box{
+            width: 150px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .menu_name{
+            width: 150px;
+            border: 1px solid #000000;
+            background: #ADB8CC;
+        }
+        .menu_name a{
+            display: block;
+            color: #fff;
+        }
+        .current{
+            background: #4531E2;
+        }
+        .submenu{
+            display: none;
+        }
+        .menu{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+<!--菜单示例-->
+    <div class="box">
+        <ul class="menu">
+            <li class="menu_name">
+                <a href="javascript:;">衬衫</a><!--
+             --><ul class="submenu">
+                    <li><a href="javascript:;">短袖衬衫</a></li>
+                    <li><a href="javascript:;">长袖衬衫</a></li>
+                    <li><a href="javascript:;">短袖T恤</a></li>
+                    <li><a href="javascript:;">长袖T恤</a></li><!--
+             --></ul>
+            </li>
+            <li class="menu_name">
+                <a href="javascript:;">卫衣</a><!--
+             --><ul class="submenu">
+                    <li><a href="javascript:;">开襟卫衣</a></li>
+                    <li><a href="javascript:;">套头卫衣</a></li>
+                    <li><a href="javascript:;">运动卫衣</a></li>
+                    <li><a href="javascript:;">童装卫衣</a></li><!--
+             --></ul>
+            </li>
+            <li class="menu_name">
+                <a href="javascript:;">裤子</a><!--
+             --><ul class="submenu">
+                    <li><a href="javascript:;">短裤</a></li>
+                    <li><a href="javascript:;">休闲裤</a></li>
+                    <li><a href="javascript:;">牛仔裤</a></li>
+                    <li><a href="javascript:;">免烫卡其裤</a></li><!--
+             --></ul>
+            </li>
+        </ul>
+    </div>
+<script type="text/javascript"  src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    $(".menu_name > a").click(function(){
+        $(this).addClass('current')
+                .next().show(500,"linear")
+                .parent().siblings().children("a").removeClass("current")
+                .next().hide(500,"linear");
+                return false;
+    })
+</script>
+</body>
+</html>
