@@ -319,7 +319,12 @@ var Qixi = function () {
                 left: endPositionLeft,
                 opacity: 0.7,
                 "-webkit-transform-style": "preserve-3d",
-                "-webkit-backface-visibility": "hidden"
+                "-webkit-backface-visibility": "hidden",
+                "-webkit-transform": "translate3d(0, 0, 0)",
+                "-moz-transform": "translate3d(0, 0, 0)",
+                "-ms-transform": "translate3d(0, 0, 0)",
+                "-o-transform": "translate3d(0, 0, 0)",
+                "transform": "translate3d(0, 0, 0)"
             }, duration, "ease-out", function () {
                 $(this).remove()
             })
@@ -378,7 +383,9 @@ function Swipe(container, options) {
         element.css({
             "transition-timing-function": "linear",
             "transition-duration": speed + "ms",
-            "transform": "translate3d(-" + x + "px,0px,0px)"
+            "transform": "translate3d(-" + x + "px,0px,0px)",
+            "-webkit-transform-style": "preserve-3d",
+            "-webkit-backface-visibility": "hidden"
         });
         return this
     };
