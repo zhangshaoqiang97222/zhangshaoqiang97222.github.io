@@ -20,7 +20,7 @@ var Qixi = function () {
             waitRotate: 850,
             waitFlower: 800
         },
-        snowflakeURl: ["images/snowflake/snowflake1.png", "images/snowflake/snowflake2.png", "images/snowflake/snowflake3.png", "images/snowflake/snowflake4.png", "images/snowflake/snowflake4.png", "images/snowflake/snowflake5.png"]
+        snowflakeURl: ["../images/snowflake/snowflake1.png", "../images/snowflake/snowflake2.png", "../images/snowflake/snowflake3.png", "../images/snowflake/snowflake4.png", "../images/snowflake/snowflake4.png", "../images/snowflake/snowflake5.png"]
     };
     var debug = 0;
     if (debug) {
@@ -382,3 +382,4 @@ function Swipe(container, options) {
     };
     return swipe
 };
+
