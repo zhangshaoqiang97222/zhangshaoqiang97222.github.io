@@ -319,12 +319,7 @@ var Qixi = function () {
                 left: endPositionLeft,
                 opacity: 0.7,
                 "-webkit-transform-style": "preserve-3d",
-                "-webkit-backface-visibility": "hidden",
-                "-webkit-transform": "translate3d(0, 0, 0)",
-                "-moz-transform": "translate3d(0, 0, 0)",
-                "-ms-transform": "translate3d(0, 0, 0)",
-                "-o-transform": "translate3d(0, 0, 0)",
-                "transform": "translate3d(0, 0, 0)"
+                "-webkit-backface-visibility": "hidden"
             }, duration, "ease-out", function () {
                 $(this).remove()
             })
