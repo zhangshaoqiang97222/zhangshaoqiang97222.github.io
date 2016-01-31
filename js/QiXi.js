@@ -4,8 +4,8 @@ var Qixi = function () {
         layer: {"width": "100%", "height": "100%", "top": 0, "left": 0},
         audio: {
             enable: true,
-            playURl: "music/xiaoqingge.mp3",
-            cycleURL: "music/baby.mp3"
+            playURl: "../music/xiaoqingge.mp3",
+            cycleURL: "../music/baby.mp3"
         },
         setTime: {
             walkToThird: 6000,
