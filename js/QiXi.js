@@ -317,7 +317,9 @@ var Qixi = function () {
             $flake.transition({
                 top: endPositionTop,
                 left: endPositionLeft,
-                opacity: 0.7
+                opacity: 0.7,
+                "-webkit-transform-style": "preserve-3d",
+                "-webkit-backface-visibility": "hidden"
             }, duration, "ease-out", function () {
                 $(this).remove()
             })
